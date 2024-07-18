@@ -4,8 +4,10 @@ services:
     image: node:14
     working_dir: /app
     volumes:
-      - ./public:/app/public
-      - ./app.js:/app/app.js
+      - /home/mpozip/Desktop/docker-website/website-docker/index.html:/app/public/index.html
+      - /home/mpozip/Desktop/docker-website/website-docker/styles.css:/app/public/styles.css
+      - /home/mpozip/Desktop/docker-website/website-docker/script.js:/app/public/script.js
+      - /home/mpozip/Desktop/docker-website/website-docker/app.js:/app/app.js
     command: node app.js
     ports:
       - "3000:3000"
