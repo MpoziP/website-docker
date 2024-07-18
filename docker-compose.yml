@@ -8,7 +8,9 @@ services:
       - /home/mpozip/Desktop/docker-website/website-docker/styles.css:/app/public/styles.css
       - /home/mpozip/Desktop/docker-website/website-docker/script.js:/app/public/script.js
       - /home/mpozip/Desktop/docker-website/website-docker/app.js:/app/app.js
-    command: node app.js
+      - /home/mpozip/Desktop/docker-website/website-docker/package.json:/app/package.json
+      - /home/mpozip/Desktop/docker-website/website-docker/node_modules:/app/node_modules
+    command: sh -c "npm install && npm start"
     ports:
       - "3000:3000"
     depends_on:
